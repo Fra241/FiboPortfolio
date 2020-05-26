@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body, html {
+            overflow:auto;
+            height: 100%;
+            margin: 0;}
+
+        @font-face{
+            src: url(fonts/SukhumvitSet-Bold.ttf);
+            font-family:sb;}
+        @font-face{
+            src: url(fonts/SukhumvitSet-SemiBold.ttf);
+            font-family:ssb;}
+        @font-face{
+            src: url(fonts/SukhumvitSet-Light.ttf);
+            font-family:sl;}
+        @font-face{
+            src: url(fonts/SukhumvitSet-Medium.ttf);
+            font-family:sm;}
+        @font-face{
+            src: url(fonts/SukhumvitSet-Text.ttf);
+            font-family:st;}
+        @font-face{
+            src: url(fonts/SukhumvitSet-Thin.ttf);
+            font-family:sth;}
+        
+        .bg {
+            background-image: url("bg.jpg");
+            height: 980px; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;}
+        .header1{
+            height: 80px;
+            width: 100%;
+            float: left;
+            background-color : rgba(0, 0, 0, 0.4);}
+        .logo{
+            margin-left:60px;
+            height: 80px;
+            width: 100px;
+            float: left;
+            background-color : #FF9200;
+            text-align:center;}
+        .logo1{
+            width:95%;
+            margin-top: 13%;}
+        .header2{
+            width: 130px;
+            float: left;}
+        .header3{
+            text-align : right;
+            padding-top:45px;
+            width: 58px;
+            float: left;}
+        .header4{
+            text-align : center;
+            padding-top:45px;
+            width: 80px;
+            float: left;}
+        .header5{
+            text-align: left;
+            width: 90px;
+            float: right;}
+        .header6{
+            padding-top:45px;
+            text-align:right;
+            width: 100px;
+            float: right;}
+        .user{
+            width:40%;
+            margin-top: 33%;}   
+        a:link {text-decoration: none;}
+        a:visited {text-decoration: none;}
+        a:hover {text-decoration: underline;}
+        a:active {text-decoration: underline;}
+        .text1{
+            margin-left:8px;
+            margin-top:6%;
+            margin-bottom:-15%;
+            color:white;
+            font-family:ssb;
+            font-size:20.5px;}
+        .text2{
+            margin-left:8px;
+            margin-top:12%;
+            margin-bottom:-15%;
+            color:white;
+            font-family:ssb;
+            font-size:7.5px;}
+        .text3{
+            margin-right:8px;
+            color:white;
+            font-family:sb;
+            font-size:10.5px;}
+        .text4{
+            margin-top:16px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left:11%;
+            padding-bottom:1px;
+            font-size:14px;
+            line-height:14px;}
+        .text5{
+            margin-top:21px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left:11%;
+            padding-bottom:1px;
+            font-size:14px;
+            line-height:0px;}
+        .text6{
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            line-height:0px;}
+        .text7{
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            margin-top:0px;}
+        .text8{
+            margin-left:12px;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            margin-top:0px;
+            line-height:0px;}
+        .text9{
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            line-height:0px;}
+        .body{
+            width: 100%;
+            float: left;
+            margin-top: 19px;}
+        .bodyleft{
+            height:702.5px;
+            margin-left:60px;
+            width: 205px;
+            float:left;
+            background-color : rgba(255, 255, 255, 0.6);}
+        .bodyright{
+            margin-left:2%;
+            margin-right:60px;
+            height:702.5px;
+            width: 480px;
+            float:left;}
+        .bodybot{
+            text-align:center;
+            margin-top: 19px;
+            width: 100%;
+            float: left;}
+        .radio {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            margin-top:5px;
+            padding-top:2px;
+            margin-left:12%;
+            padding-left:10%;
+            padding-bottom:1px;
+            color:black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:9px;}
+        .radio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;}
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 8px;
+            width: 8px;
+            background-color: white;
+            border-radius: 50%;}
+        .radio:hover input ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .radio input:checked ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;}
+        .radio input:checked ~ .checkmark:after {
+            display: block;}
+        .radio .checkmark:after {
+                top: 2px;
+                left: 2.6px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #FF9200;}
+        
+        .year{
+            margin-left:11%;
+            margin-bottom:1px;
+            height:18px;
+            width: 80%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);
+            }
+        ::placeholder {
+            font-style:italic;
+            opacity: 0.5;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            opacity: 0.5;
+            font-style:italic;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            }
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            opacity: 0.5;
+            font-style:italic;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .cat{
+            margin-top:0px;
+            margin-left:7%;
+            margin-bottom:28.5px;
+            width: 36.5%;
+            float: left;}
+        .cat1{
+            display: block;
+            position: relative;
+            cursor: pointer;
+            margin-top:5px;
+            padding-top:2px;
+            margin-left:11%;
+            padding-left:27.5%;
+            padding-bottom:1.5px;
+            color:black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:9px;}
+        .cat1 input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;}
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 11px;
+            width: 11px;
+            background-color: white;
+            border-radius: 50%;}
+        .cat1:hover input ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .cat1 input:checked ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;}
+        .cat1 input:checked ~ .checkmark:after {
+            display: block;}
+        .cat1 .checkmark:after {
+                top: 2px;
+                left: 2px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #FF9200;}
+
+        .key{
+            margin-top: 7px;
+            margin-left:7%;
+            padding-top:10px;
+            padding-bottom:15px;
+            width: 86%;
+            border: none;
+            border-radius: 7px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        .keybut{
+            display: inline-block;
+            opacity:0.5;
+            background-color: white;
+            border: none;
+            color: black;
+            padding:2px 2px;
+            width:60px;
+            text-align: center;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            margin: 2px 4px;
+            cursor: pointer;
+            transition-duration: 0.2s;
+            border-radius: 5px;}
+        .keybut:hover {
+            opacity:1;
+            background-color: #FF9200;
+            color: white;}
+        .keybut:active {
+            opacity:1;
+            background-color: rgba(255, 255, 255, 0.5);
+            color:black;
+            border-radius: 5px;
+            padding:0px 0px;
+            border: 2px solid orange;}
+        .keystate{display:none}
+        .keystate:checked + .keybut{
+            opacity:1;
+            background-color: rgba(255, 255, 255, 0.5);
+            color:black;
+            border-radius: 5px;
+            padding:0px 0px;
+            border: 2px solid orange;}
+        
+        .keyword{
+            margin-bottom:1px;
+            height:18px;
+            width: 93%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.4);
+            background-image: url('plus.png');
+            background-position: 146px 3px; 
+            background-repeat: no-repeat;
+            background-size: 13px 13px;
+            margin-bottom:62px;
+            }
+        .keyword::placeholder {
+            font-style:italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .keyword:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            font-style:italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .keyword::-ms-input-placeholder { /* Microsoft Edge */
+            font-style:italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        
+        .pjname{
+            display: inline-block;
+            margin-left: 10px;
+            margin-bottom: 7px;
+            height:18px;
+            width: 81%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        .tname{
+            display: inline-block;
+            margin-left: 7px;
+            margin-bottom: 10px;
+            height:18px;
+            width: 35.5%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+
+        .team{
+            display: inline-block;
+            margin-top:1px;
+            margin-left: 17px;
+            margin-right:-3px;
+            margin-bottom: 7px;
+            height:18px;
+            width: 43.5%;
+            border: none;
+            border-radius: 12px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        .abs{
+            display:block;
+            overflow: auto;
+            padding: 15px;
+            margin-top:10px;
+            margin-bottom: 22px;
+            height:80px;
+            width: 94%;
+            border: none;
+            border-radius: 7px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        input[type="file"] {
+            display: none;}
+
+        .myimg{
+            opacity:1;
+            display:block;
+            cursor: pointer;
+            margin-top:10px;
+            margin-bottom: 10px;
+            height:30px;
+            width: 100%;
+            border: none;
+            border-radius: 7px;
+            padding-top:70px;
+            text-align: center;
+            background-image: url('photo.png');
+            background-position: 220px 15px; 
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            color:rgba(0, 0, 0, 0.4);}
+
+        .myfile{
+            opacity:1;
+            display:block;
+            cursor: pointer;
+            margin-top:10px;
+            margin-bottom: 22px;
+            height:30px;
+            width: 100%;
+            border: none;
+            border-radius: 7px;
+            padding-top:70px;
+            text-align: center;
+            background-image: url('attach.png');
+            background-position: 220px 15px; 
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            color:rgba(0, 0, 0, 0.4);}
+        
+        input[type=button], input[type=submit], input[type=reset] {
+            border: none;
+            color: black;
+            cursor: pointer;
+            height:25px;
+            width: 80px;
+            margin: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            font-style: bold;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        
+        .red{background: #ff0202;}
+        .green{background: #8de732;}
+        .orange{background: #ff9200;}
+        .footer {
+            position: sticky;
+            height: 50px;
+            margin-top: 60px;
+            width: 100%;
+            float: left;
+            background-color : rgba(0, 0, 0, 0.4);}
+        
+        .help{
+            margin-left:7%;
+            height: 40px;
+            width: 100px;
+            float: left;
+            text-align:left;}
+        .help1{
+            width:19%;
+            margin-top:18px;
+            margin-right:3px;
+            vertical-align:text-bottom}
+        .longlo{
+            margin-right: 7%;
+            text-align:right;
+            float: right;}
+        .header7{display:none;}
+        .header8{display:none;}
+        .longlogo{
+            margin-top: 5px;
+            width:60%;}   
+        
+
+        @media screen and (max-width: 700px) { 
+        body, html {
+            overflow:auto;
+            height: 100%;
+            margin: 0;}
+        
+        .bg {
+            background-image: url("bg.jpg");
+            height: 980px; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;}
+        .header1{
+            height: 80px;
+            width: 100%;
+            float: left;
+            background-color : rgba(0, 0, 0, 0.4);}
+        .logo{
+            margin-left:30px;
+            height: 80px;
+            width: 100px;
+            float: left;
+            background-color : #FF9200;
+            text-align:center;}
+        .logo1{
+            width:95%;
+            margin-top: 13%;}
+        .header2{
+            width: 130px;
+            float: left;}
+        .header3{
+            text-align : right;
+            padding-top:45px;
+            width: 58px;
+            float: left;}
+        .header4{
+            text-align : center;
+            padding-top:45px;
+            width: 80px;
+            float: left;}
+        .header5{
+            padding-top:12px;
+            text-align: left;
+            width: 60px;
+            float: right;}
+        .header6{
+            padding-top:45px;
+            text-align:right;
+            width: 100px;
+            float: right;}
+        .user{
+            width:55%;
+            margin-top: 33%;}   
+        a:link {text-decoration: none;}
+        a:visited {text-decoration: none;}
+        a:hover {text-decoration: underline;}
+        a:active {text-decoration: underline;}
+        .text1{
+            margin-left:8px;
+            margin-top:6%;
+            margin-bottom:-15%;
+            color:white;
+            font-family:ssb;
+            font-size:20.5px;}
+        .text2{
+            margin-left:8px;
+            margin-top:12%;
+            margin-bottom:-15%;
+            color:white;
+            font-family:ssb;
+            font-size:7.5px;}
+        .text3{
+            margin-right:8px;
+            color:white;
+            font-family:sb;
+            font-size:10.5px;}
+        .text4{
+            margin-top:16px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left:11%;
+            padding-bottom:1px;
+            font-size:14px;
+            line-height:14px;}
+        .text5{
+            margin-top:21px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left:11%;
+            padding-bottom:1px;
+            font-size:14px;
+            line-height:0px;}
+        .text6{
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            line-height:0px;}
+        .text7{
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            margin-top:0px;}
+        .text8{
+            margin-left:12px;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            margin-top:0px;
+            line-height:0px;}
+        .text9{
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            line-height:0px;}
+        .body{
+            width: 100%;
+            float: left;
+            margin-top: 19px;}
+        .bodyleft{
+            height:702.5px;
+            margin-left:30px;
+            width: 205px;
+            float:left;
+            background-color : rgba(255, 255, 255, 0.6);}
+        .bodyright{
+            margin-left:2%;
+            margin-right:30px;
+            height:702.5px;
+            width: 410px;
+            float:left;}
+        .bodybot{
+            text-align:center;
+            margin-top: 19px;
+            width: 100%;
+            float: left;}
+        .radio {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            margin-top:5px;
+            padding-top:2px;
+            margin-left:12%;
+            padding-left:10%;
+            padding-bottom:1px;
+            color:black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:9px;}
+        .radio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;}
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 8px;
+            width: 8px;
+            background-color: white;
+            border-radius: 50%;}
+        .radio:hover input ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .radio input:checked ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;}
+        .radio input:checked ~ .checkmark:after {
+            display: block;}
+        .radio .checkmark:after {
+                top: 2px;
+                left: 2.6px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #FF9200;}
+        
+        .year{
+            margin-left:11%;
+            margin-bottom:1px;
+            height:18px;
+            width: 80%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);
+            }
+        ::placeholder {
+            font-style:italic;
+            opacity: 0.5;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            opacity: 0.5;
+            font-style:italic;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            }
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            opacity: 0.5;
+            font-style:italic;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .cat{
+            margin-top:0px;
+            margin-left:7%;
+            margin-bottom:28.5px;
+            width: 36.5%;
+            float: left;}
+        .cat1{
+            display: block;
+            position: relative;
+            cursor: pointer;
+            margin-top:5px;
+            padding-top:2px;
+            margin-left:11%;
+            padding-left:27.5%;
+            padding-bottom:1.5px;
+            color:black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:9px;}
+        .cat1 input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;}
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 11px;
+            width: 11px;
+            background-color: white;
+            border-radius: 50%;}
+        .cat1:hover input ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .cat1 input:checked ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;}
+        .cat1 input:checked ~ .checkmark:after {
+            display: block;}
+        .cat1 .checkmark:after {
+                top: 2px;
+                left: 2px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #FF9200;}
+
+        .key{
+            margin-top: 7px;
+            margin-left:7%;
+            padding-top:10px;
+            padding-bottom:15px;
+            width: 86%;
+            border: none;
+            border-radius: 7px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        .keybut{
+            display: inline-block;
+            opacity:0.5;
+            background-color: white;
+            border: none;
+            color: black;
+            padding:2px 2px;
+            width:60px;
+            text-align: center;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            margin: 2px 4px;
+            cursor: pointer;
+            transition-duration: 0.2s;
+            border-radius: 5px;}
+        .keybut:hover {
+            opacity:1;
+            background-color: #FF9200;
+            color: white;}
+        .keybut:active {
+            opacity:1;
+            background-color: rgba(255, 255, 255, 0.5);
+            color:black;
+            border-radius: 5px;
+            padding:0px 0px;
+            border: 2px solid orange;}
+        .keystate{display:none}
+        .keystate:checked + .keybut{
+            opacity:1;
+            background-color: rgba(255, 255, 255, 0.5);
+            color:black;
+            border-radius: 5px;
+            padding:0px 0px;
+            border: 2px solid orange;}
+        
+        .keyword{
+            margin-bottom:1px;
+            height:18px;
+            width: 93%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.4);
+            background-image: url('plus.png');
+            background-position: 146px 3px; 
+            background-repeat: no-repeat;
+            background-size: 13px 13px;
+            margin-bottom:62px;}
+        .keyword::placeholder {
+            font-style:italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .keyword:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            font-style:italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .keyword::-ms-input-placeholder { /* Microsoft Edge */
+            font-style:italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .pjname{
+            display: inline-block;
+            margin-left: 10px;
+            margin-bottom: 7px;
+            height:18px;
+            width: 75%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        .tname{
+            display: inline-block;
+            margin-left: 7px;
+            margin-bottom: 10px;
+            height:18px;
+            width: 35.5%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+
+        .team{
+            display: inline-block;
+            margin-top:1px;
+            margin-left: 17px;
+            margin-right:-3px;
+            margin-bottom: 7px;
+            height:18px;
+            width: 40%;
+            border: none;
+            border-radius: 12px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        .abs{
+            display:block;
+            overflow: auto;
+            padding: 15px;
+            margin-top:10px;
+            margin-bottom: 22px;
+            height:80px;
+            width: 90%;
+            border: none;
+            border-radius: 7px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        input[type="file"] {
+            display: none;}
+
+        .myimg{
+            opacity:1;
+            display:block;
+            cursor: pointer;
+            margin-top:10px;
+            margin-bottom: 10px;
+            height:30px;
+            width: 97%;
+            border: none;
+            border-radius: 7px;
+            padding-top:70px;
+            text-align: center;
+            background-image: url('photo.png');
+            background-position: 175px 15px; 
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            color:rgba(0, 0, 0, 0.4);}
+
+        .myfile{
+            opacity:1;
+            display:block;
+            cursor: pointer;
+            margin-top:10px;
+            margin-bottom: 22px;
+            height:30px;
+            width: 97%;
+            border: none;
+            border-radius: 7px;
+            padding-top:70px;
+            text-align: center;
+            background-image: url('attach.png');
+            background-position: 175px 15px; 
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            color:rgba(0, 0, 0, 0.4);}
+        
+        input[type=button], input[type=submit], input[type=reset] {
+            border: none;
+            color: black;
+            cursor: pointer;
+            height:25px;
+            width: 80px;
+            margin: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            font-style: bold;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        
+        .red{background: #ff0202;}
+        .green{background: #8de732;}
+        .orange{background: #ff9200;}
+        .footer {
+            position: sticky;
+            height: 50px;
+            margin-top: 60px;
+            width: 100%;
+            float: left;
+            background-color : rgba(0, 0, 0, 0.4);}
+        
+        .help{
+            margin-left:7%;
+            height: 40px;
+            width: 100px;
+            float: left;
+            text-align:left;}
+        .help1{
+            width:19%;
+            margin-top:18px;
+            margin-right:3px;
+            vertical-align:text-bottom}
+        .longlo{
+            margin-right: 7%;
+            text-align:right;
+            float: right;}
+        .longlogo{
+            margin-top: 5px;
+            width:60%;}   
+        .header7{display:none;}
+        .header8{display:none;}
+        }
+    
+        @media screen and (max-width: 600px) {
+            body, html {
+            overflow:auto;
+            height: 100%;
+            margin: 0;}
+        
+        .bg {
+            background-image: url("bg.jpg");
+            height: 980px; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;}
+        .header1{
+            height: 80px;
+            width: 100%;
+            float: left;
+            background-color : rgba(0, 0, 0, 0.4);}
+        .logo{
+            margin-left:30px;
+            height: 80px;
+            width: 100px;
+            float: left;
+            background-color : #FF9200;
+            text-align:center;}
+        .logo1{
+            width:95%;
+            margin-top: 13%;}
+        .header2{
+            width: 130px;
+            float: left;}
+        .header3{display:none;}
+        .header4{display:none;}
+        .header5{display:none;}
+        .header6{display:none;}
+        .user{
+            width:55%;
+            margin-top: 33%;}   
+        a:link {text-decoration: none;}
+        a:visited {text-decoration: none;}
+        a:hover {text-decoration: underline;}
+        a:active {text-decoration: underline;}
+        .text1{
+            margin-left:8px;
+            margin-top:6%;
+            margin-bottom:-15%;
+            color:white;
+            font-family:ssb;
+            font-size:20.5px;}
+        .text2{
+            margin-left:8px;
+            margin-top:12%;
+            margin-bottom:-15%;
+            color:white;
+            font-family:ssb;
+            font-size:7.5px;}
+        .text3{
+            margin-right:8px;
+            color:white;
+            font-family:sb;
+            font-size:10.5px;}
+        .text4{
+            margin-top:16px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left:11%;
+            padding-bottom:1px;
+            font-size:14px;
+            line-height:14px;}
+        .text5{
+            margin-top:21px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left:11%;
+            padding-bottom:1px;
+            font-size:14px;
+            line-height:0px;}
+        .text6{
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            line-height:0px;}
+        .text7{
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            margin-top:0px;}
+        .text8{
+            margin-left:12px;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            margin-top:0px;
+            line-height:0px;}
+        .text9{
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            line-height:0px;}
+        .body{
+            width: 100%;
+            float: left;
+            margin-top: 19px;}
+        .bodyleft{
+            height:702.5px;
+            margin-left:30px;
+            width: 205px;
+            float:left;
+            background-color : rgba(255, 255, 255, 0.6);}
+        .bodyright{
+            margin-left:2%;
+            margin-right:30px;
+            height:702.5px;
+            width: 410px;
+            float:left;}
+        .bodybot{
+            text-align:center;
+            margin-top: 19px;
+            width: 100%;
+            float: left;}
+        .radio {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            margin-top:5px;
+            padding-top:2px;
+            margin-left:12%;
+            padding-left:10%;
+            padding-bottom:1px;
+            color:black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:9px;}
+        .radio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;}
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 8px;
+            width: 8px;
+            background-color: white;
+            border-radius: 50%;}
+        .radio:hover input ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .radio input:checked ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;}
+        .radio input:checked ~ .checkmark:after {
+            display: block;}
+        .radio .checkmark:after {
+                top: 2px;
+                left: 2.6px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #FF9200;}
+        
+        .year{
+            margin-left:11%;
+            margin-bottom:1px;
+            height:18px;
+            width: 80%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);
+            }
+        ::placeholder {
+            font-style:italic;
+            opacity: 0.5;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            opacity: 0.5;
+            font-style:italic;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            }
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            opacity: 0.5;
+            font-style:italic;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .cat{
+            margin-top:0px;
+            margin-left:7%;
+            margin-bottom:28.5px;
+            width: 36.5%;
+            float: left;}
+        .cat1{
+            display: block;
+            position: relative;
+            cursor: pointer;
+            margin-top:5px;
+            padding-top:2px;
+            margin-left:11%;
+            padding-left:27.5%;
+            padding-bottom:1.5px;
+            color:black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:9px;}
+        .cat1 input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;}
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 11px;
+            width: 11px;
+            background-color: white;
+            border-radius: 50%;}
+        .cat1:hover input ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .cat1 input:checked ~ .checkmark {
+            border: 1px solid orange;
+            background-color: white;}
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;}
+        .cat1 input:checked ~ .checkmark:after {
+            display: block;}
+        .cat1 .checkmark:after {
+                top: 2px;
+                left: 2px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #FF9200;}
+
+        .key{
+            margin-top: 7px;
+            margin-left:7%;
+            padding-top:10px;
+            padding-bottom:15px;
+            width: 86%;
+            border: none;
+            border-radius: 7px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        .keybut{
+            display: inline-block;
+            opacity:0.5;
+            background-color: white;
+            border: none;
+            color: black;
+            padding:2px 2px;
+            width:60px;
+            text-align: center;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            margin: 2px 4px;
+            cursor: pointer;
+            transition-duration: 0.2s;
+            border-radius: 5px;}
+        .keybut:hover {
+            opacity:1;
+            background-color: #FF9200;
+            color: white;}
+        .keybut:active {
+            opacity:1;
+            background-color: rgba(255, 255, 255, 0.5);
+            color:black;
+            border-radius: 5px;
+            padding:0px 0px;
+            border: 2px solid orange;}
+        .keystate{display:none}
+        .keystate:checked + .keybut{
+            opacity:1;
+            background-color: rgba(255, 255, 255, 0.5);
+            color:black;
+            border-radius: 5px;
+            padding:0px 0px;
+            border: 2px solid orange;}
+        
+        .keyword{
+            margin-bottom:1px;
+            height:18px;
+            width: 93%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.4);
+            background-image: url('plus.png');
+            background-position: 146px 3px; 
+            background-repeat: no-repeat;
+            background-size: 13px 13px;
+            margin-bottom:62px;
+            }
+        .keyword::placeholder {
+            font-style:italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .keyword:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            font-style:italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .keyword::-ms-input-placeholder { /* Microsoft Edge */
+            font-style:italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        .pjname{
+            display: inline-block;
+            margin-left: 10px;
+            margin-bottom: 7px;
+            height:18px;
+            width: 75%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        .tname{
+            display: inline-block;
+            margin-left: 7px;
+            margin-bottom: 10px;
+            height:18px;
+            width: 35.5%;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+
+        .team{
+            display: inline-block;
+            margin-top:1px;
+            margin-left: 17px;
+            margin-right:-3px;
+            margin-bottom: 7px;
+            height:18px;
+            width: 40%;
+            border: none;
+            border-radius: 12px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        .abs{
+            display:block;
+            overflow: auto;
+            padding: 15px;
+            margin-top:10px;
+            margin-bottom: 22px;
+            height:80px;
+            width: 90%;
+            border: none;
+            border-radius: 7px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.6);}
+        
+        input[type="file"] {
+            display: none;}
+
+        .myimg{
+            opacity:1;
+            display:block;
+            cursor: pointer;
+            margin-top:10px;
+            margin-bottom: 10px;
+            height:30px;
+            width: 97%;
+            border: none;
+            border-radius: 7px;
+            padding-top:70px;
+            text-align: center;
+            background-image: url('photo.png');
+            background-position: 175px 15px; 
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            color:rgba(0, 0, 0, 0.4);}
+
+        .myfile{
+            opacity:1;
+            display:block;
+            cursor: pointer;
+            margin-top:10px;
+            margin-bottom: 22px;
+            height:30px;
+            width: 97%;
+            border: none;
+            border-radius: 7px;
+            padding-top:70px;
+            text-align: center;
+            background-image: url('attach.png');
+            background-position: 175px 15px; 
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;
+            color:rgba(0, 0, 0, 0.4);}
+        
+        input[type=button], input[type=submit], input[type=reset] {
+            border: none;
+            color: black;
+            cursor: pointer;
+            height:25px;
+            width: 80px;
+            margin: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            font-style: bold;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:11px;}
+        
+        .red{background: #ff0202;}
+        .green{background: #8de732;}
+        .orange{background: #ff9200;}
+        .footer {
+            position: sticky;
+            height: 50px;
+            margin-top: 60px;
+            width: 100%;
+            float: left;
+            background-color : rgba(0, 0, 0, 0.4);}
+        .help{
+            margin-left:7%;
+            height: 40px;
+            width: 100px;
+            float: left;
+            text-align:left;}
+        .help1{
+            width:19%;
+            margin-top:18px;
+            margin-right:3px;
+            vertical-align:text-bottom}
+        .longlo{
+            margin-right: 7%;
+            text-align:right;
+            float: right;}
+        .longlogo{
+            margin-top: 5px;
+            width:60%;}   
+        .header7{
+            padding-top:30px;
+            text-align:left;
+            width: 50px;
+            float: right;}
+        .header8{
+            margin-right:10px;
+            padding-top:25px;
+            text-align:left;
+            width: 38px;
+            float: right;}
+        .menu{width:90%;}
+        .menu1{width:50%;}
+        .dropdown {
+            height:50px;
+            position: relative;
+            display: inline-block;}
+        .dropdown-content {
+            text-align:center;
+            right:12px;
+            top:25px;
+            display: none;
+            position: absolute;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;}
+        .dropdown-content a {
+            padding: 2px 8px;
+            display: block;}
+        .dropdown-content a:hover {background-color: rgba(255,255,255,0.2)}
+        .dropdown:hover .dropdown-content {display: block;}
+        .text10{
+            color:white;
+            font-family:sb;
+            font-size:10px;}
+        .text11{
+            padding-top:10px;
+            color:white;
+            font-family:sb;
+            font-size:10.5px;
+            line-height:0px;}
+        }
+    
+    </style>
+    </head>
+<body>
+    
+    <div class="bg">
+
+        <div class = "header1">
+            <div class = "logo"><img src="FIBO collector-1.png" class="logo1"></div>
+            <div class = "header2">
+                <h1 class = "text1">FIBO</h1>
+                <h1 class = "text1">COLLECTOR</h1>
+                <p class = "text2">ACADEMIC PORTFOLIO & PROJECT</p></div>
+            <div class = "header3"><a class = "text3" href="profile.html">Profile</a></div>
+            <div class = "header4"><a class = "text3" href="upload.html">Upload</a></div>
+            <div class = "header5"><img src="user.png" class = "user"></div> 
+            <div class = "header6"><p class = "text3">NAME SURNAME</p></div>
+        </div>
+
+        <div class = "body">
+            <form>
+                <div class = "bodyleft">
+                    <p class = "text4">Type</p>
+                    <label class="radio">Class project
+                    <input type="radio" id="class" name="type">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="radio">Thesis
+                    <input type="radio" id="thesis" name="type">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="radio">Research
+                    <input type="radio" id="research" name="type">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="radio">...
+                    <input type="radio" id="other" name="type">
+                    <span class="checkmark"></span>
+                    </label>
+                    <p class = "text5">Year</p>
+                    <input type="text" id="year" name="year" placeholder="Project year" class="year">
+                    <p class = "text5">Category</p>
+                    <div class = "cat">
+                        <label class="cat1">Business
+                        <input type="checkbox" id="class" name="type">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="cat1">Education
+                        <input type="checkbox" id="class" name="type">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="cat1">Eldery
+                        <input type="checkbox" id="class" name="type">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="cat1">Emergency
+                        <input type="checkbox" id="class" name="type">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class = "cat">
+                        <label class="cat1">Other1
+                        <input type="checkbox" id="class" name="type">
+                        <span class="checkmark"></span>
+                        </label>
+                         <label class="cat1">Other2
+                        <input type="checkbox" id="class" name="type">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="cat1">Other3
+                        <input type="checkbox" id="class" name="type">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="cat1">Other4
+                        <input type="checkbox" id="class" name="type">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <p class = "text5">Keyword</p>
+                    <div class= "key">
+                        <input type="text" id="keyword" name="key" placeholder="add keyword" class="keyword">
+                        <input type="checkbox" name="key" class="keystate" id ="business" >
+                        <label class="keybut" for="business" >Business</label>
+                        <input type="checkbox" name="key" class="keystate" id="education" >
+                        <label class="keybut" for="education">Education</label>
+                        <input type="checkbox" name="key" class="keystate" id="eldery" >
+                        <label class="keybut" for="eldery">Eldery</label>
+                        <input type="checkbox" name="key" class="keystate" id="emergency" >
+                        <label class="keybut" for="emergency">Emergency</label>
+                        <input type="checkbox" name="key" class="keystate" id="other1" >
+                        <label class="keybut" for="other1">Other1</label>
+                        <input type="checkbox" name="key" class="keystate" id="other2" >
+                        <label class="keybut" for="other2">Other2</label>
+                        <input type="checkbox" name="key" class="keystate" id="other3" >
+                        <label class="keybut" for="other3">Other3</label>
+                        <input type="checkbox" name="key" class="keystate" id="other4" >
+                        <label class="keybut" for="other4">Other4</label>
+                        <input type="checkbox" name="key" class="keystate" id="other5" >
+                        <label class="keybut" for="other5">Other5</label>
+                        <input type="checkbox" name="key" class="keystate" id="other6" >
+                        <label class="keybut" for="other6">Other6</label>
+                        <input type="checkbox" name="key" class="keystate" id="other7" >
+                        <label class="keybut" for="other7">Other7</label>
+                        <input type="checkbox" name="key" class="keystate" id="other8" >
+                        <label class="keybut" for="other8">Other8</label>
+                    </div>
+                </div>
+
+                <div class = "bodyright">
+                    <span class = "text6"><b>Project name:</b></span>
+                    <input type="text" id="pjname" name="pjname" placeholder="Project name" class="pjname">
+                    <p class = "text6"><b>Abstract</b></p>
+                    <textarea id="abs" name="abs" class="abs"></textarea>
+                    <p class = "text6"><b>Conclution</b></p>
+                    <textarea id="con" name="con" class="abs"></textarea>
+                    <span class = "text7"><b>Project team:</b></span>
+                    <input type="text" id="tname" name="tname" placeholder="Number of team" class="tname"><br>
+                    <span class = "text8"><b>1.</b></span>
+                    <input type="text" id="id1" name="id" placeholder="Student ID" class="team">
+                    <input type="text" id="id1" name="id" placeholder="Position" class="team"><br>
+                    <span class = "text8"><b>2.</b></span>
+                    <input type="text" id="id2" name="id" placeholder="Student ID" class="team">
+                    <input type="text" id="id2" name="id" placeholder="Position" class="team"><br>
+                    <span class = "text8"><b>3.</b></span>
+                    <input type="text" id="id3" name="id" placeholder="Student ID" class="team">
+                    <input type="text" id="id3" name="id" placeholder="Position" class="team"><br>
+                    <span class = "text9"><b>Photo upload</b></span>
+                    <img src="folder (1).png" width="15" height="15"style="vertical-align:middle">
+                    <label for="img" class = "myimg">Drag & Drop Photo</label>
+                    <input type="file" id="img" name="img" accept="image/*" multiple >
+                    <span class = "text9"><b>File upload</b></span>
+                    <img src="folder (1).png" width="15" height="15"style="vertical-align:middle">
+                    <label for="file" class = "myfile">Drag & Drop File</label>
+                    <input type="file" id="file" name="file" multiple >
+                </div>
+
+                <div class = "bodybot">
+                <input type="button" class = "orange" value="Save">
+                <input type="submit" class = "green" value="Upload">
+                <input type="reset" class = "red" value="Delete">
+                </div>
+            </form>
+
+        </div>
+
+        <div class="footer">
+            <div class = "help">
+            <img src="question.png" class="help1">
+            <span class = "text9"><b>Help</b></span>
+            </div>
+             <div class = "longlo">
+            <img src="logo-header.png" class="longlogo" >
+            
+        </div>
+    </div>
+
+</body>
+</html>
